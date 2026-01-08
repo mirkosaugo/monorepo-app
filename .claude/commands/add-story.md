@@ -24,19 +24,38 @@ Create a Storybook story for the component "$ARGUMENTS" that already exists in t
 
 ## Story Template
 
+**IMPORTANT:** The Storybook story serves as the primary documentation for the component. Include:
+- A JSDoc comment with description and link to shadcn/ui docs
+- A `docs.description.component` in parameters with a brief description and link to shadcn/ui
+
 ```tsx
 import type { Meta, StoryObj } from "@storybook/react";
 import { ComponentName } from "@monorepo-app/ui";
 
+/**
+ * Brief description of what this component does.
+ *
+ * Built on top of shadcn/ui ComponentName component.
+ *
+ * @see https://ui.shadcn.com/docs/components/{component-name}
+ */
 const meta: Meta<typeof ComponentName> = {
   title: "UI/ComponentName",
   component: ComponentName,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "Brief description of the component and its main features. [View shadcn/ui docs](https://ui.shadcn.com/docs/components/{component-name})",
+      },
+    },
   },
   tags: ["autodocs"],
   argTypes: {
     // Define controls for each prop
+    // variant: { control: "select", options: ["default", "secondary"] },
+    // disabled: { control: "boolean" },
   },
 };
 
@@ -50,6 +69,7 @@ export const Default: Story = {
 // Add variant stories
 // Add size stories if applicable
 // Add state stories (disabled, loading, etc.)
+// Add an "AllVariants" or "AllStates" story showing all options
 // Add interactive stories with render functions if needed
 ```
 
@@ -58,4 +78,5 @@ export const Default: Story = {
 - Cover ALL variants documented in the component
 - Include proper TypeScript types
 - Use `@monorepo-app/ui` for imports
+- Always include the shadcn/ui documentation link
 - Follow existing story patterns in the project

@@ -1,11 +1,24 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Avatar, AvatarImage, AvatarFallback } from "@monorepo-app/ui";
 
+/**
+ * An image element with a fallback for representing the user.
+ *
+ * Built on top of shadcn/ui Avatar component using Radix UI primitives.
+ *
+ * @see https://ui.shadcn.com/docs/components/avatar
+ */
 const meta: Meta<typeof Avatar> = {
   title: "UI/Avatar",
   component: Avatar,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "An image element with a fallback for representing the user. Composed of Avatar, AvatarImage, and AvatarFallback. [View shadcn/ui docs](https://ui.shadcn.com/docs/components/avatar)",
+      },
+    },
   },
   tags: ["autodocs"],
 };

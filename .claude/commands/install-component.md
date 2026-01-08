@@ -1,5 +1,5 @@
 ---
-description: Install a shadcn/ui component with Storybook story and Docusaurus documentation
+description: Install a shadcn/ui component with Storybook story
 allowed-tools: Bash(cd:*), Bash(npx:*), Bash(pnpm:*), Read, Write, Edit, Glob, Grep
 ---
 
@@ -39,9 +39,13 @@ Follow the existing pattern in the file. For example:
 export { ComponentName, componentVariants, type ComponentProps } from "./components/ui/$ARGUMENTS";
 ```
 
-## Step 4: Create Storybook story
+## Step 4: Create Storybook story with documentation
 
 Create a new file at `apps/storybook/stories/{PascalCaseName}.stories.tsx`.
+
+**IMPORTANT:** The Storybook story serves as the primary documentation for the component. Include:
+- A JSDoc comment with description and link to shadcn/ui docs
+- A `docs.description.component` in parameters with a brief description and link to shadcn/ui
 
 Use this template, adapting it based on the component's props and variants:
 
@@ -49,13 +53,31 @@ Use this template, adapting it based on the component's props and variants:
 import type { Meta, StoryObj } from "@storybook/react";
 import { ComponentName } from "@monorepo-app/ui";
 
+/**
+ * Brief description of what this component does.
+ *
+ * Built on top of shadcn/ui ComponentName component.
+ *
+ * @see https://ui.shadcn.com/docs/components/{component-name}
+ */
 const meta: Meta<typeof ComponentName> = {
   title: "UI/ComponentName",
   component: ComponentName,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "Brief description of the component and its main features. [View shadcn/ui docs](https://ui.shadcn.com/docs/components/{component-name})",
+      },
+    },
   },
   tags: ["autodocs"],
+  argTypes: {
+    // Add controls for the component's props
+    // variant: { control: "select", options: ["default", "secondary"] },
+    // disabled: { control: "boolean" },
+  },
 };
 
 export default meta;
@@ -76,86 +98,9 @@ Include stories for:
 - Different sizes (if applicable)
 - Disabled state (if applicable)
 - Interactive examples with useState (if the component is interactive)
+- An "AllVariants" or "AllStates" story showing all options at once
 
-## Step 5: Create Docusaurus documentation
-
-Create a new file at `apps/docs/docs/components/{kebab-case-name}.md`.
-
-Use this template:
-
-```markdown
----
-sidebar_position: {next available position}
----
-
-# ComponentName
-
-Brief description of what this component does and when to use it.
-
-## Import
-
-\`\`\`tsx
-import { ComponentName } from "@monorepo-app/ui";
-\`\`\`
-
-## Basic Usage
-
-\`\`\`tsx
-<ComponentName>Example</ComponentName>
-\`\`\`
-
-## Variants
-
-{If the component has variants, document each one with code examples}
-
-## Props
-
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| prop1 | type | default | description |
-
-## Examples
-
-### Example 1 Title
-
-\`\`\`tsx
-// Full example code
-\`\`\`
-
-## Accessibility
-
-- List accessibility features
-- Keyboard navigation support
-- ARIA attributes used
-
-## Source Code
-
-Located at: \`packages/ui/src/components/ui/{component-name}.tsx\`
-```
-
-## Step 6: Update the sidebar
-
-Edit `apps/docs/sidebars.ts` to add the new component to the sidebar navigation.
-
-Find the "Components" category and add the new component entry **before** `"components/adding-components"`:
-
-```ts
-{
-  type: "category",
-  label: "Components",
-  items: [
-    "components/overview",
-    "components/button",
-    // ... other components
-    "components/{kebab-case-name}",  // Add new component here
-    "components/adding-components",  // Keep this last
-  ],
-},
-```
-
-This ensures the component documentation appears in the sidebar navigation.
-
-## Step 7: Verify the installation
+## Step 5: Verify the installation
 
 Run the build to ensure everything works:
 
@@ -163,16 +108,14 @@ Run the build to ensure everything works:
 pnpm build
 ```
 
-## Step 8: Report completion
+## Step 6: Report completion
 
 After completing all steps, provide a summary:
 
 1. Component installed: `$ARGUMENTS`
 2. Exports added to `packages/ui/src/index.ts`
 3. Storybook story created at `apps/storybook/stories/...`
-4. Documentation created at `apps/docs/docs/components/...`
-5. Sidebar updated in `apps/docs/sidebars.ts`
-6. Build status: success/failure
+4. Build status: success/failure
 
 If any step fails, explain the error and suggest how to fix it.
 
@@ -181,5 +124,5 @@ If any step fails, explain the error and suggest how to fix it.
 - Always use `@monorepo-app/ui` as the import namespace
 - Follow existing code patterns in the repository
 - Make stories comprehensive with all variants
-- Documentation should be clear and include all props
+- Always include the shadcn/ui documentation link in the story
 - Run the build at the end to catch any errors

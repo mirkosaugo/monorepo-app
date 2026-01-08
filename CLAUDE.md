@@ -66,19 +66,32 @@ Add the export to `packages/ui/src/index.ts`:
 export { ComponentName } from "./components/ui/component-name";
 ```
 
-### 3. Create Storybook story
+### 3. Create Storybook story with documentation
 
-Create `apps/storybook/stories/ComponentName.stories.tsx` following this template:
+Create `apps/storybook/stories/ComponentName.stories.tsx`. The Storybook story serves as the primary documentation for the component - include a description and link to shadcn/ui docs:
 
 ```tsx
 import type { Meta, StoryObj } from "@storybook/react";
 import { ComponentName } from "@monorepo-app/ui";
 
+/**
+ * Brief description of the component.
+ *
+ * Built on top of shadcn/ui ComponentName component.
+ *
+ * @see https://ui.shadcn.com/docs/components/component-name
+ */
 const meta: Meta<typeof ComponentName> = {
   title: "UI/ComponentName",
   component: ComponentName,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "Brief description. [View shadcn/ui docs](https://ui.shadcn.com/docs/components/component-name)",
+      },
+    },
   },
   tags: ["autodocs"],
 };
@@ -93,43 +106,7 @@ export const Default: Story = {
 };
 ```
 
-### 4. Create Docusaurus documentation
-
-Create `apps/docs/docs/components/component-name.md` following this template:
-
-```md
----
-sidebar_position: X
----
-
-# ComponentName
-
-Brief description of the component.
-
-## Import
-
-\`\`\`tsx
-import { ComponentName } from "@monorepo-app/ui";
-\`\`\`
-
-## Basic Usage
-
-\`\`\`tsx
-<ComponentName>Example</ComponentName>
-\`\`\`
-
-## Props
-
-| Prop | Type | Default | Description |
-| ---- | ---- | ------- | ----------- |
-| ...  | ...  | ...     | ...         |
-
-## Source Code
-
-Located at: \`packages/ui/src/components/ui/component-name.tsx\`
-```
-
-### 5. Verify the installation
+### 4. Verify the installation
 
 ```bash
 pnpm build
@@ -145,10 +122,9 @@ pnpm build
 
 ## Important Files
 
-- @packages/ui/src/index.ts - UI package exports
-- @apps/storybook/stories/ - Storybook stories
-- @apps/docs/docs/components/ - Component documentation
-- @turbo.json - Turborepo pipeline configuration
+- `packages/ui/src/index.ts` - UI package exports
+- `apps/storybook/stories/` - Storybook stories (component documentation)
+- `turbo.json` - Turborepo pipeline configuration
 
 ## Custom Claude Commands
 
@@ -156,5 +132,6 @@ Use `/install-component <name>` to automatically:
 
 1. Install a shadcn/ui component
 2. Export it from the UI package
-3. Create a Storybook story
-4. Create Docusaurus documentation
+3. Create a Storybook story with documentation
+
+Use `/add-story <name>` to create a Storybook story for an existing component.

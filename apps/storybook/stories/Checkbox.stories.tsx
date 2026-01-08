@@ -2,11 +2,24 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Checkbox } from "@monorepo-app/ui";
 import { useState } from "react";
 
+/**
+ * A checkbox component with support for controlled and uncontrolled states.
+ *
+ * Built on top of shadcn/ui Checkbox component using Radix UI primitives.
+ *
+ * @see https://ui.shadcn.com/docs/components/checkbox
+ */
 const meta: Meta<typeof Checkbox> = {
   title: "UI/Checkbox",
   component: Checkbox,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A control that allows the user to toggle between checked and not checked. Supports disabled state and works with labels. [View shadcn/ui docs](https://ui.shadcn.com/docs/components/checkbox)",
+      },
+    },
   },
   tags: ["autodocs"],
   argTypes: {

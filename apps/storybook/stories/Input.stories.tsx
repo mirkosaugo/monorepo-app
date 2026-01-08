@@ -1,11 +1,24 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Input } from "@monorepo-app/ui";
 
+/**
+ * A styled text input field component.
+ *
+ * Built on top of shadcn/ui Input component.
+ *
+ * @see https://ui.shadcn.com/docs/components/input
+ */
 const meta: Meta<typeof Input> = {
   title: "UI/Input",
   component: Input,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A text input field with consistent styling. Supports all standard HTML input types (text, email, password, number, etc.). [View shadcn/ui docs](https://ui.shadcn.com/docs/components/input)",
+      },
+    },
   },
   tags: ["autodocs"],
   argTypes: {

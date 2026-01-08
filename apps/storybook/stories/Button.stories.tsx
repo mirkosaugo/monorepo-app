@@ -1,11 +1,24 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "@monorepo-app/ui";
 
+/**
+ * A versatile button component with multiple variants and sizes.
+ *
+ * Built on top of shadcn/ui Button component.
+ *
+ * @see https://ui.shadcn.com/docs/components/button
+ */
 const meta: Meta<typeof Button> = {
   title: "UI/Button",
   component: Button,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A button component with multiple variants (default, destructive, outline, secondary, ghost, link) and sizes (sm, default, lg, icon). [View shadcn/ui docs](https://ui.shadcn.com/docs/components/button)",
+      },
+    },
   },
   tags: ["autodocs"],
   argTypes: {

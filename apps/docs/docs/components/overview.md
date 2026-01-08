@@ -4,16 +4,19 @@ sidebar_position: 1
 
 # Components Overview
 
-The `@monorepo-app/ui` package contains a collection of reusable UI components built with shadcn/ui and Tailwind CSS.
+The `@monorepo-app/ui` package contains a collection of reusable UI components built with [shadcn/ui](https://ui.shadcn.com) and Tailwind CSS.
 
-## Available Components
+## Component Documentation
 
-| Component | Description |
-|-----------|-------------|
-| [Button](/components/button) | Versatile button with multiple variants and sizes |
-| [Input](/components/input) | Text input field with consistent styling |
-| [Card](/components/card) | Container component with header, content, and footer |
-| [Checkbox](/components/checkbox) | Checkbox with label support and controlled state |
+All components are documented in **Storybook** with interactive examples and links to the official shadcn/ui documentation.
+
+```bash
+pnpm dev:storybook
+```
+
+Then open [http://localhost:6006](http://localhost:6006) to explore all available components.
+
+For detailed API documentation and examples, refer to the [shadcn/ui documentation](https://ui.shadcn.com/docs/components).
 
 ## Installation
 
@@ -105,12 +108,3 @@ function MyComponent({ className }) {
 }
 ```
 
-## Storybook
-
-All components have Storybook stories for visual testing and documentation. Run Storybook to explore:
-
-```bash
-pnpm dev:storybook
-```
-
-Then open [http://localhost:6006](http://localhost:6006).

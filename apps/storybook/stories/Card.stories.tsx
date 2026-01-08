@@ -10,11 +10,24 @@ import {
   Input,
 } from "@monorepo-app/ui";
 
+/**
+ * A container component with header, content, and footer sections.
+ *
+ * Built on top of shadcn/ui Card component.
+ *
+ * @see https://ui.shadcn.com/docs/components/card
+ */
 const meta: Meta<typeof Card> = {
   title: "UI/Card",
   component: Card,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component:
+          "A versatile container component composed of Card, CardHeader, CardTitle, CardDescription, CardContent, and CardFooter. [View shadcn/ui docs](https://ui.shadcn.com/docs/components/card)",
+      },
+    },
   },
   tags: ["autodocs"],
 };

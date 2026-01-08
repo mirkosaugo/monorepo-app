@@ -13,11 +13,6 @@ const sidebars: SidebarsConfig = {
       label: "Components",
       items: [
         "components/overview",
-        "components/button",
-        "components/input",
-        "components/card",
-        "components/checkbox",
-        "components/avatar",
         "components/adding-components",
       ],
     },
