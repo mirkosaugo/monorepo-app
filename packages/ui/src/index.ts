@@ -10,6 +10,7 @@ export {
   CardContent,
 } from "./components/ui/card";
 export { Checkbox, type CheckboxProps } from "./components/ui/checkbox";
+export { Avatar, AvatarImage, AvatarFallback } from "./components/ui/avatar";
 
 // Utilities
 export { cn } from "./lib/utils";

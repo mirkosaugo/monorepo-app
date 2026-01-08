@@ -6,6 +6,8 @@ node_modules
 dist
 .next
 storybook-static
+build
+.docusaurus
 
 # Cache
 .turbo
