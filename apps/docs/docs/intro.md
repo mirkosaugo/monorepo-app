@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Introduction
 
-Welcome to the **Turborepo shadcn/ui Monorepo** documentation. This is a modern, production-ready monorepo setup featuring:
+Welcome to the **Monorepo app** documentation. This is a modern, production-ready monorepo setup featuring:
 
 - **Turborepo** - High-performance build system for monorepos
 - **Next.js 14** - React framework with App Router
@@ -19,12 +19,15 @@ Welcome to the **Turborepo shadcn/ui Monorepo** documentation. This is a modern,
 ## Why This Stack?
 
 ### Turborepo
+
 Turborepo provides intelligent caching and parallel execution of tasks. When you modify a component, only the affected packages and apps are rebuilt, dramatically speeding up development.
 
 ### shadcn/ui
+
 Unlike traditional component libraries, shadcn/ui gives you ownership of your components. You can customize them freely without fighting against library constraints.
 
 ### Monorepo Architecture
+
 All your apps share the same component library, ensuring consistency across your entire product. Changes to components automatically propagate to all apps.
 
 ## Quick Start
@@ -40,18 +43,19 @@ pnpm dev
 ```
 
 This will start:
+
 - **Next.js** on [http://localhost:3000](http://localhost:3000)
 - **Storybook** on [http://localhost:6006](http://localhost:6006)
 - **Docusaurus** on [http://localhost:3002](http://localhost:3002)
 
 ## What's Included
 
-| App/Package | Description | Port |
-|-------------|-------------|------|
-| `apps/web` | Next.js Todo App demo | 3000 |
-| `apps/storybook` | Component playground | 6006 |
-| `apps/docs` | Documentation (Docusaurus) | 3002 |
-| `packages/ui` | Shared component library | - |
+| App/Package      | Description                | Port |
+| ---------------- | -------------------------- | ---- |
+| `apps/web`       | Next.js Todo App demo      | 3000 |
+| `apps/storybook` | Component playground       | 6006 |
+| `apps/docs`      | Documentation (Docusaurus) | 3002 |
+| `packages/ui`    | Shared component library   | -    |
 
 ## Claude Code Integration
 

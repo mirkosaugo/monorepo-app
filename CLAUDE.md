@@ -1,4 +1,4 @@
-# Turborepo shadcn/ui Monorepo - Claude Code Instructions
+# Monorepo app - Claude Code Instructions
 
 This is a Turborepo monorepo with Next.js, Storybook, Docusaurus, and a shared UI component library based on shadcn/ui.
 

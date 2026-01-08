@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Installation
 
-This guide walks you through setting up the Turborepo shadcn/ui monorepo from scratch.
+This guide walks you through setting up the Monorepo app from scratch.
 
 ## Prerequisites
 
@@ -45,6 +45,7 @@ pnpm install
 ```
 
 This will install all dependencies for:
+
 - Root workspace
 - `apps/web` (Next.js)
 - `apps/storybook` (Storybook)
@@ -76,9 +77,11 @@ This builds all apps in the correct dependency order.
 After running `pnpm dev`, verify each app is running:
 
 1. **Next.js Todo App**: Open [http://localhost:3000](http://localhost:3000)
+
    - You should see a Todo app with add/remove functionality
 
 2. **Storybook**: Open [http://localhost:6006](http://localhost:6006)
+
    - You should see the component library documentation
 
 3. **Docusaurus**: Open [http://localhost:3002](http://localhost:3002)

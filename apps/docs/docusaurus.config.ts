@@ -3,7 +3,7 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Turborepo shadcn/ui",
+  title: "Monorepo app",
   tagline: "A modern monorepo with Next.js, Storybook, and shadcn/ui",
   favicon: "img/favicon.ico",
 
@@ -39,7 +39,7 @@ const config: Config = {
 
   themeConfig: {
     navbar: {
-      title: "Turborepo shadcn/ui",
+      title: "Monorepo app",
       items: [
         {
           type: "docSidebar",
@@ -88,7 +88,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Turborepo shadcn/ui. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Monorepo app. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
