@@ -12,6 +12,7 @@ build
 # Cache
 .turbo
 .cache
+*.tsbuildinfo
 
 # IDE
 .idea
