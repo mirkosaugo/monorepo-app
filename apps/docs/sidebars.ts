@@ -17,6 +17,7 @@ const sidebars: SidebarsConfig = {
         "components/input",
         "components/card",
         "components/checkbox",
+        "components/avatar",
         "components/adding-components",
       ],
     },

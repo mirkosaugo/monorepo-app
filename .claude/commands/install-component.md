@@ -133,7 +133,29 @@ import { ComponentName } from "@monorepo-app/ui";
 Located at: \`packages/ui/src/components/ui/{component-name}.tsx\`
 ```
 
-## Step 6: Verify the installation
+## Step 6: Update the sidebar
+
+Edit `apps/docs/sidebars.ts` to add the new component to the sidebar navigation.
+
+Find the "Components" category and add the new component entry **before** `"components/adding-components"`:
+
+```ts
+{
+  type: "category",
+  label: "Components",
+  items: [
+    "components/overview",
+    "components/button",
+    // ... other components
+    "components/{kebab-case-name}",  // Add new component here
+    "components/adding-components",  // Keep this last
+  ],
+},
+```
+
+This ensures the component documentation appears in the sidebar navigation.
+
+## Step 7: Verify the installation
 
 Run the build to ensure everything works:
 
@@ -141,7 +163,7 @@ Run the build to ensure everything works:
 pnpm build
 ```
 
-## Step 7: Report completion
+## Step 8: Report completion
 
 After completing all steps, provide a summary:
 
@@ -149,7 +171,8 @@ After completing all steps, provide a summary:
 2. Exports added to `packages/ui/src/index.ts`
 3. Storybook story created at `apps/storybook/stories/...`
 4. Documentation created at `apps/docs/docs/components/...`
-5. Build status: success/failure
+5. Sidebar updated in `apps/docs/sidebars.ts`
+6. Build status: success/failure
 
 If any step fails, explain the error and suggest how to fix it.
 
