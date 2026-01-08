@@ -1,0 +1,26 @@
+{
+  "id": "getting-started/commands",
+  "title": "Commands",
+  "description": "All available commands for working with the monorepo.",
+  "source": "@site/docs/getting-started/commands.md",
+  "sourceDirName": "getting-started",
+  "slug": "/getting-started/commands",
+  "permalink": "/getting-started/commands",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Project Structure",
+    "permalink": "/getting-started/project-structure"
+  },
+  "next": {
+    "title": "Components Overview",
+    "permalink": "/components/overview"
+  }
+}

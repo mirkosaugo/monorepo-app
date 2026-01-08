@@ -1,0 +1,26 @@
+{
+  "id": "apps/storybook",
+  "title": "Storybook",
+  "description": "The apps/storybook directory contains the Storybook application for component documentation and visual testing.",
+  "source": "@site/docs/apps/storybook.md",
+  "sourceDirName": "apps",
+  "slug": "/apps/storybook",
+  "permalink": "/apps/storybook",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Next.js Web App",
+    "permalink": "/apps/nextjs-web"
+  },
+  "next": {
+    "title": "Docusaurus (This Documentation)",
+    "permalink": "/apps/docusaurus"
+  }
+}

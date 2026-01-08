@@ -1,0 +1,9 @@
+{
+  "label": "Apps",
+  "position": 4,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "Applications in the monorepo."
+  }
+}

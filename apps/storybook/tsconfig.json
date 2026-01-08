@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "paths": {
+      "@monorepo-app/ui": ["../../packages/ui/src"],
+      "@monorepo-app/ui/*": ["../../packages/ui/src/*"]
+    }
+  },
+  "include": ["stories/**/*", ".storybook/**/*"],
+  "exclude": ["node_modules"]
+}

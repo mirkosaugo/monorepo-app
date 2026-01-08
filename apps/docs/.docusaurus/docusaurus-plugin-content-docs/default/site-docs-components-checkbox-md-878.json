@@ -1,0 +1,26 @@
+{
+  "id": "components/checkbox",
+  "title": "Checkbox",
+  "description": "A checkbox component with label support and controlled state.",
+  "source": "@site/docs/components/checkbox.md",
+  "sourceDirName": "components",
+  "slug": "/components/checkbox",
+  "permalink": "/components/checkbox",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Card",
+    "permalink": "/components/card"
+  },
+  "next": {
+    "title": "Adding New Components",
+    "permalink": "/components/adding-components"
+  }
+}

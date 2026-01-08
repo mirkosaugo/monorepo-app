@@ -1,0 +1,9 @@
+{
+  "label": "Guides",
+  "position": 6,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "Guides and tutorials for working with the monorepo."
+  }
+}

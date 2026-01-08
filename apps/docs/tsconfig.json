@@ -1,0 +1,13 @@
+{
+  "extends": "@docusaurus/module-type-aliases",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/", "docs/", "docusaurus.config.ts", "sidebars.ts"]
+}

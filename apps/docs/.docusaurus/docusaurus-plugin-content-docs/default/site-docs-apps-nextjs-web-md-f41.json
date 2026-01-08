@@ -1,0 +1,26 @@
+{
+  "id": "apps/nextjs-web",
+  "title": "Next.js Web App",
+  "description": "The apps/web directory contains a Next.js 14 application demonstrating the use of @monorepo-app/ui components.",
+  "source": "@site/docs/apps/nextjs-web.md",
+  "sourceDirName": "apps",
+  "slug": "/apps/nextjs-web",
+  "permalink": "/apps/nextjs-web",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Apps Overview",
+    "permalink": "/apps/overview"
+  },
+  "next": {
+    "title": "Storybook",
+    "permalink": "/apps/storybook"
+  }
+}

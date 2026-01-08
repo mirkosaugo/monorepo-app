@@ -1,0 +1,26 @@
+{
+  "id": "guides/how-turborepo-works",
+  "title": "How Turborepo Works",
+  "description": "This guide explains the core concepts of Turborepo and how it optimizes the monorepo workflow.",
+  "source": "@site/docs/guides/how-turborepo-works.md",
+  "sourceDirName": "guides",
+  "slug": "/guides/how-turborepo-works",
+  "permalink": "/guides/how-turborepo-works",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Adding New Packages",
+    "permalink": "/packages/adding-packages"
+  },
+  "next": {
+    "title": "Development Workflow",
+    "permalink": "/guides/development-workflow"
+  }
+}

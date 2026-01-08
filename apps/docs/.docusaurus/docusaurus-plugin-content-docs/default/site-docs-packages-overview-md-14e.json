@@ -1,0 +1,26 @@
+{
+  "id": "packages/overview",
+  "title": "Packages Overview",
+  "description": "The packages/ directory contains shared code that can be used across multiple apps in the monorepo.",
+  "source": "@site/docs/packages/overview.md",
+  "sourceDirName": "packages",
+  "slug": "/packages/overview",
+  "permalink": "/packages/overview",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Adding New Apps",
+    "permalink": "/apps/adding-apps"
+  },
+  "next": {
+    "title": "UI Library (@monorepo-app/ui)",
+    "permalink": "/packages/ui-library"
+  }
+}
