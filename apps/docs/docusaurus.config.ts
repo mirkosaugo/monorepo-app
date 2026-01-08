@@ -11,7 +11,7 @@ const config: Config = {
   baseUrl: "/",
 
   organizationName: "your-org",
-  projectName: "turborepo-shadcn",
+  projectName: "monorepo-app",
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -48,7 +48,7 @@ const config: Config = {
           label: "Documentation",
         },
         {
-          href: "https://github.com/your-org/turborepo-shadcn",
+          href: "https://github.com/your-org/monorepo-app",
           label: "GitHub",
           position: "right",
         },

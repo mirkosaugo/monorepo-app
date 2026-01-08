@@ -5,7 +5,7 @@ This is a Turborepo monorepo with Next.js, Storybook, Docusaurus, and a shared U
 ## Project Structure
 
 ```
-turborepo-shadcn/
+monorepo-app/
 ├── apps/
 │   ├── web/           # Next.js 14 application (port 3000)
 │   ├── storybook/     # Storybook 8 (port 6006)
@@ -121,8 +121,8 @@ import { ComponentName } from "@monorepo-app/ui";
 ## Props
 
 | Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| ... | ... | ... | ... |
+| ---- | ---- | ------- | ----------- |
+| ...  | ...  | ...     | ...         |
 
 ## Source Code
 
@@ -153,6 +153,7 @@ pnpm build
 ## Custom Claude Commands
 
 Use `/install-component <name>` to automatically:
+
 1. Install a shadcn/ui component
 2. Export it from the UI package
 3. Create a Storybook story

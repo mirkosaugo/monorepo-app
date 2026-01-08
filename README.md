@@ -5,7 +5,7 @@ A modern monorepo setup with Turborepo, Next.js, Storybook, Docusaurus, and a UI
 ## Structure
 
 ```
-turborepo-shadcn/
+monorepo-app/
 ├── apps/
 │   ├── web/                    # Next.js 14 App (Todo App demo)
 │   ├── storybook/              # Storybook 8 for component documentation
@@ -44,6 +44,7 @@ pnpm build
 Full documentation is available in the Docusaurus app. Run `pnpm dev:docs` and open [http://localhost:3002](http://localhost:3002).
 
 The documentation includes:
+
 - Getting Started guides
 - Component API references
 - How to add new components, apps, and packages
@@ -57,17 +58,24 @@ The documentation includes:
 
 Available shadcn/ui components:
 
-| Component | Import | Description |
-|-----------|--------|-------------|
-| `Button` | `import { Button } from "@monorepo-app/ui"` | Button with variants (default, destructive, outline, secondary, ghost, link) |
-| `Input` | `import { Input } from "@monorepo-app/ui"` | Input field with shadcn styles |
-| `Card` | `import { Card, CardHeader, ... } from "@monorepo-app/ui"` | Card container with header, content, footer |
-| `Checkbox` | `import { Checkbox } from "@monorepo-app/ui"` | Checkbox with onCheckedChange callback |
+| Component  | Import                                                     | Description                                                                  |
+| ---------- | ---------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `Button`   | `import { Button } from "@monorepo-app/ui"`                | Button with variants (default, destructive, outline, secondary, ghost, link) |
+| `Input`    | `import { Input } from "@monorepo-app/ui"`                 | Input field with shadcn styles                                               |
+| `Card`     | `import { Card, CardHeader, ... } from "@monorepo-app/ui"` | Card container with header, content, footer                                  |
+| `Checkbox` | `import { Checkbox } from "@monorepo-app/ui"`              | Checkbox with onCheckedChange callback                                       |
 
 **Usage in an app:**
 
 ```tsx
-import { Button, Input, Card, CardHeader, CardTitle, CardContent } from "@monorepo-app/ui";
+import {
+  Button,
+  Input,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+} from "@monorepo-app/ui";
 
 export default function MyComponent() {
   return (
@@ -110,7 +118,7 @@ Then use it in your app:
 ```tsx
 import { Badge } from "@monorepo-app/ui";
 
-<Badge variant="secondary">New</Badge>
+<Badge variant="secondary">New</Badge>;
 ```
 
 For detailed instructions, see the [Adding Components](http://localhost:3002/components/adding-components) guide in the documentation.
@@ -118,11 +126,13 @@ For detailed instructions, see the [Adding Components](http://localhost:3002/com
 ## Adding a New App
 
 1. **Create the folder** in `apps/`:
+
    ```bash
    mkdir -p apps/admin
    ```
 
 2. **Create `package.json`**:
+
    ```json
    {
      "name": "admin",
@@ -151,12 +161,14 @@ For detailed instructions, see the [Adding Components](http://localhost:3002/com
    ```
 
 3. **Configure Tailwind** by copying from `apps/web/`:
+
    - `tailwind.config.ts`
    - `postcss.config.js`
    - `tsconfig.json`
    - `next.config.js`
 
 4. **Create the app structure**:
+
    ```
    apps/admin/
    ├── app/
@@ -177,11 +189,13 @@ For a complete step-by-step guide including Docusaurus setup example, see the [A
 ## Adding a New Package
 
 1. **Create the folder** in `packages/`:
+
    ```bash
    mkdir -p packages/utils/src
    ```
 
 2. **Create `package.json`**:
+
    ```json
    {
      "name": "@monorepo-app/utils",
@@ -223,6 +237,7 @@ find . -name "*.json" -o -name "*.ts" -o -name "*.tsx" | xargs sed -i '' 's/@mon
 ```
 
 Then reinstall dependencies:
+
 ```bash
 rm -rf node_modules apps/*/node_modules packages/*/node_modules
 pnpm install
@@ -233,15 +248,18 @@ See the [Renaming Namespace](http://localhost:3002/guides/renaming-namespace) gu
 ## How the Ecosystem Works
 
 ### Turborepo
+
 - **Parallel pipelines**: `turbo.json` defines tasks (build, dev, lint) that run in parallel
 - **Caching**: Builds are cached to speed up subsequent runs
 - **Dependencies**: `dependsOn: ["^build"]` ensures packages are built before apps
 
 ### pnpm Workspaces
+
 - **Workspace protocol**: `workspace:*` links local packages without publishing
 - **Hoisting**: Common dependencies are shared at the root
 
 ### Development Flow
+
 ```
 1. Modify a component in packages/ui
 2. Turborepo detects the change
@@ -260,18 +278,18 @@ This monorepo includes custom [Claude Code](https://claude.ai/code) commands tha
 npm install -g @anthropic-ai/claude-code
 
 # Start Claude Code in the project
-cd turborepo-shadcn
+cd monorepo-app
 claude
 ```
 
 ### Available Commands
 
-| Command | Description |
-|---------|-------------|
+| Command                     | Description                                           |
+| --------------------------- | ----------------------------------------------------- |
 | `/install-component <name>` | Install shadcn component + create story + create docs |
-| `/list-components` | Show all components and their status |
-| `/add-story <name>` | Create Storybook story for existing component |
-| `/add-docs <name>` | Create Docusaurus docs for existing component |
+| `/list-components`          | Show all components and their status                  |
+| `/add-story <name>`         | Create Storybook story for existing component         |
+| `/add-docs <name>`          | Create Docusaurus docs for existing component         |
 
 ### Example: Adding a Component
 
